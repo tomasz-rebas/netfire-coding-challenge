@@ -82,7 +82,10 @@ export const VideoPlayer = ({ src }: Props) => {
       </div>
       <div className="absolute inset-0 -z-10 bg-black/40" />
       <div className="mx-auto flex h-[900px] max-w-7xl flex-col justify-end pb-40">
-        <div className="max-w-4xl mb-10 text-[45px] leading-[57px]">
+        <button className="border-brand-gray text-white border-solid border-1 bg-[#D9D9D919] py-3 px-6 rounded-xl text-center text-xs w-fit">
+          LOREM IPSUM
+        </button>
+        <div className="max-w-4xl my-10 text-[45px] leading-[57px]">
           <h1 className="text-gradient font-semibold tracking-tighter mb-2">
             Lorem Ipsum Dolor Sit amet
           </h1>
