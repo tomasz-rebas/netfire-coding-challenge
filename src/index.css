@@ -1,17 +1,28 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-lime: #bee035;
+  --color-brand-light: #caea71;
+  --color-brand-purple: #844071;
+  --color-brand-blue: #404f84;
+  --color-brand-gray: #443b3b;
+  --color-dark-gray: #827d7d;
+  --color-light-gray: #d9d9d9;
+  --color-lighter-gray: #ececec;
+}
+
 @layer utilities {
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#BEE035] via-[#844071] to-[#404F84];
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-lime via-brand-purple to-brand-blue;
   }
   .gradient-separator {
-    @apply bg-gradient-to-r from-[#CAEA71] via-[#844071] to-[#404F84] h-2;
+    @apply bg-gradient-to-r from-brand-light via-brand-purple to-brand-blue h-2;
   }
   .button-rounded {
-    @apply border-[#827D7D] border-solid border-1 bg-[#D9D9D9] h-10 w-10 rounded-full flex justify-center items-center;
+    @apply border-dark-gray border-solid border-1 bg-light-gray h-10 w-10 rounded-full flex justify-center items-center;
   }
   .button-rectangle {
-    @apply border-[#827D7D] border-solid border-1 bg-[#D9D9D9] py-2 px-6 rounded-lg text-center text-sm;
+    @apply border-dark-gray border-solid border-1 bg-light-gray py-2 px-6 rounded-lg text-center text-sm;
   }
   .button-rectangle.selected {
     @apply bg-[#E5E5DF] font-semibold;
@@ -21,7 +32,7 @@
 body {
   font-family: "Exo", sans-serif;
   font-weight: 500;
-  background-color: #ececec;
+  background-color: var(--color-lighter-gray);
   margin: 0;
   letter-spacing: 0.07em;
   line-height: 100%;

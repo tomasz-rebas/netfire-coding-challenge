@@ -86,7 +86,7 @@ export const VideoPlayer = ({ src }: Props) => {
           <h1 className="text-gradient font-semibold tracking-tight mb-2">
             Lorem Ipsum Dolor Sit amet
           </h1>
-          <h2 className="text-[#ECECEC] font-semibold">
+          <h2 className="text-lighter-gray font-semibold">
             Donec cursus ligula diam, nec congue augue ultrices nec.
           </h2>
         </div>
