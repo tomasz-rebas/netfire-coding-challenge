@@ -31,6 +31,21 @@ export const VideoPlayer = ({ src }: Props) => {
           </h2>
         </div>
       </div>
+      <div className="mt-6 flex w-full items-center gap-5 rounded-xl bg-black/30 p-6 backdrop-blur">
+        <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30">
+          P
+        </button>
+        <input
+          type="range"
+          min={0}
+          step={0.1}
+          className="flex-1 rounded-2xl h-3"
+          aria-label="Seek"
+        />
+        <div className="w-16 text-center tabular-nums font-bold text-[#C9C4C1]">
+          01:34
+        </div>
+      </div>
     </section>
   );
 };
