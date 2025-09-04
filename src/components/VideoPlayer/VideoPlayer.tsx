@@ -1,8 +1,5 @@
 import { useRef } from "react";
-import { formatTime } from "./helpers/formatTime";
-import { PauseIcon } from "./assets/PauseIcon";
-import { PlayIcon } from "./assets/PlayIcon";
-import { useVideoPlayer } from "./hooks/useVideoPlayer";
+import { VideoControls } from "./components/VideoControls";
 
 interface Props {
   src: string;
@@ -10,16 +7,6 @@ interface Props {
 
 export const VideoPlayer = ({ src }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const {
-    isPlaying,
-    duration,
-    current,
-    togglePlay,
-    onScrub,
-    commitScrub,
-    setIsScrubbing,
-  } = useVideoPlayer(videoRef);
 
   return (
     <section className="relative isolate">
@@ -47,41 +34,7 @@ export const VideoPlayer = ({ src }: Props) => {
             Donec cursus ligula diam, nec congue augue ultrices nec.
           </h2>
         </div>
-        <div className="mt-6 flex w-full items-center gap-5 rounded-xl bg-black/30 p-6 backdrop-blur">
-          <button
-            onClick={togglePlay}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
-            aria-label={isPlaying ? "Pause" : "Play"}
-          >
-            {isPlaying ? <PauseIcon /> : <PlayIcon />}
-          </button>
-          <input
-            type="range"
-            min={0}
-            max={duration || 0}
-            step={0.1}
-            value={current}
-            onChange={(e) => onScrub(parseFloat(e.target.value))}
-            onMouseDown={() => setIsScrubbing(true)}
-            onMouseUp={(e) =>
-              commitScrub(parseFloat((e.target as HTMLInputElement).value))
-            }
-            onTouchStart={() => setIsScrubbing(true)}
-            onTouchEnd={(e) =>
-              commitScrub(parseFloat((e.target as HTMLInputElement).value))
-            }
-            className="flex-1 rounded-2xl h-3"
-            aria-label="Seek"
-            style={{
-              background: `linear-gradient(to right, #CAE871 ${
-                (current / duration) * 100
-              }%, #252525 ${(current / duration) * 100}%)`,
-            }}
-          />
-          <div className="w-16 text-center tabular-nums font-bold text-[#C9C4C1]">
-            {formatTime(current)}
-          </div>
-        </div>
+        <VideoControls videoRef={videoRef} />
       </div>
     </section>
   );

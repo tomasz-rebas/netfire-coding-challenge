@@ -7,7 +7,7 @@ export const App = () => (
   <div>
     <Header />
     <main>
-      <VideoPlayer src="public/9206132-uhd_3840_2160_25fps.mp4" />
+      <VideoPlayer src="/9206132-uhd_3840_2160_25fps.mp4" />
       <ExampleSection />
     </main>
     <Footer />
