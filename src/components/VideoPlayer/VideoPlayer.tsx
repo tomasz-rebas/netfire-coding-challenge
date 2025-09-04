@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { formatTime } from "./helpers/formatTime";
 import { PauseIcon } from "./assets/PauseIcon";
 import { PlayIcon } from "./assets/PlayIcon";
+import { useVideoPlayer } from "./hooks/useVideoPlayer";
 
 interface Props {
   src: string;
@@ -9,63 +10,16 @@ interface Props {
 
 export const VideoPlayer = ({ src }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [current, setCurrent] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [isScrubbing, setIsScrubbing] = useState(false);
 
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const onLoaded = () => setDuration(v.duration || 0);
-    const onTime = () => {
-      if (!isScrubbing) setCurrent(v.currentTime || 0);
-    };
-    const onPlay = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
-
-    v.addEventListener("loadedmetadata", onLoaded);
-    v.addEventListener("timeupdate", onTime);
-    v.addEventListener("play", onPlay);
-    v.addEventListener("pause", onPause);
-
-    const tryPlay = async () => {
-      try {
-        await v.play();
-      } catch {
-        setIsPlaying(false);
-      }
-    };
-    tryPlay();
-
-    return () => {
-      v.removeEventListener("loadedmetadata", onLoaded);
-      v.removeEventListener("timeupdate", onTime);
-      v.removeEventListener("play", onPlay);
-      v.removeEventListener("pause", onPause);
-    };
-  }, [isScrubbing]);
-
-  const togglePlay = async () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      await v.play();
-    } else {
-      v.pause();
-    }
-  };
-
-  const onScrub = (value: number) => {
-    setCurrent(value);
-  };
-
-  const commitScrub = (value: number) => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.currentTime = value;
-    setIsScrubbing(false);
-  };
+  const {
+    isPlaying,
+    duration,
+    current,
+    togglePlay,
+    onScrub,
+    commitScrub,
+    setIsScrubbing,
+  } = useVideoPlayer(videoRef);
 
   return (
     <section className="relative isolate">
