@@ -114,6 +114,11 @@ export const VideoPlayer = ({ src }: Props) => {
           }
           className="flex-1 rounded-2xl h-3"
           aria-label="Seek"
+          style={{
+            background: `linear-gradient(to right, #CAE871 ${
+              (current / duration) * 100
+            }%, #252525 ${(current / duration) * 100}%)`,
+          }}
         />
         <div className="w-16 text-center tabular-nums font-bold text-[#C9C4C1]">
           {formatTime(current)}
