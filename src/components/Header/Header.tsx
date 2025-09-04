@@ -10,6 +10,7 @@ export const Header = () => {
         NEW CUSTOMERS GET 15% OFF! USE CODE{" "}
         <span className="text-[#404F84]">WELCOME15</span>
       </div>
+      <div className="gradient-separator" />
       <div className="grid grid-cols-3 max-w-7xl mx-auto h-26">
         <nav className="flex gap-4 justify-start items-center">
           <button className="button-rectangle selected">HOME</button>

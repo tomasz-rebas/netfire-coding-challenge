@@ -1,3 +1,6 @@
-export const Footer = () => {
-  return <div>Footer</div>;
-};
+export const Footer = () => (
+  <div>
+    <div className="gradient-separator" />
+    <footer>Footer</footer>
+  </div>
+);
