@@ -7,7 +7,12 @@
 }
 
 body {
+  font-family: "Exo", sans-serif;
+  font-weight: medium;
+  background-color: #ececec;
   margin: 0;
+  letter-spacing: 0.07em;
+  line-height: 100%;
 }
 
 input[type="range"]::-webkit-slider-thumb {
