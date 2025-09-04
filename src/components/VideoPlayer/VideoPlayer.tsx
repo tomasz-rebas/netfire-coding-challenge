@@ -10,13 +10,14 @@ export const VideoPlayer = ({ src }: Props) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isScrubbing, setIsScrubbing] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     const onLoaded = () => setDuration(v.duration || 0);
     const onTime = () => {
-      setCurrent(v.currentTime || 0);
+      if (!isScrubbing) setCurrent(v.currentTime || 0);
     };
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
@@ -33,7 +34,6 @@ export const VideoPlayer = ({ src }: Props) => {
         setIsPlaying(false);
       }
     };
-
     tryPlay();
 
     return () => {
@@ -42,7 +42,7 @@ export const VideoPlayer = ({ src }: Props) => {
       v.removeEventListener("play", onPlay);
       v.removeEventListener("pause", onPause);
     };
-  }, []);
+  }, [isScrubbing]);
 
   const togglePlay = async () => {
     const v = videoRef.current;
@@ -52,6 +52,17 @@ export const VideoPlayer = ({ src }: Props) => {
     } else {
       v.pause();
     }
+  };
+
+  const onScrub = (value: number) => {
+    setCurrent(value);
+  };
+
+  const commitScrub = (value: number) => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.currentTime = value;
+    setIsScrubbing(false);
   };
 
   return (
@@ -92,6 +103,15 @@ export const VideoPlayer = ({ src }: Props) => {
           max={duration || 0}
           step={0.1}
           value={current}
+          onChange={(e) => onScrub(parseFloat(e.target.value))}
+          onMouseDown={() => setIsScrubbing(true)}
+          onMouseUp={(e) =>
+            commitScrub(parseFloat((e.target as HTMLInputElement).value))
+          }
+          onTouchStart={() => setIsScrubbing(true)}
+          onTouchEnd={(e) =>
+            commitScrub(parseFloat((e.target as HTMLInputElement).value))
+          }
           className="flex-1 rounded-2xl h-3"
           aria-label="Seek"
         />
