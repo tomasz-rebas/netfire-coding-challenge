@@ -1,5 +1,5 @@
 export const ExampleSection = () => (
-  <div className="flex justify-center py-20">
+  <div className="flex justify-center py-18">
     <div className="max-w-7xl text-center">
       <button className="border-[#443B3B] border-solid border-1 bg-[#D9D9D930] px-6 py-4 rounded-xl text-xs">
         EXAMPLE SECTION
