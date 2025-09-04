@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   src: string;
@@ -6,6 +6,52 @@ interface Props {
 
 export const VideoPlayer = ({ src }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onLoaded = () => setDuration(v.duration || 0);
+    const onTime = () => {
+      setCurrent(v.currentTime || 0);
+    };
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+
+    v.addEventListener("loadedmetadata", onLoaded);
+    v.addEventListener("timeupdate", onTime);
+    v.addEventListener("play", onPlay);
+    v.addEventListener("pause", onPause);
+
+    const tryPlay = async () => {
+      try {
+        await v.play();
+      } catch {
+        setIsPlaying(false);
+      }
+    };
+
+    tryPlay();
+
+    return () => {
+      v.removeEventListener("loadedmetadata", onLoaded);
+      v.removeEventListener("timeupdate", onTime);
+      v.removeEventListener("play", onPlay);
+      v.removeEventListener("pause", onPause);
+    };
+  }, []);
+
+  const togglePlay = async () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      await v.play();
+    } else {
+      v.pause();
+    }
+  };
 
   return (
     <section className="relative isolate">
@@ -32,13 +78,19 @@ export const VideoPlayer = ({ src }: Props) => {
         </div>
       </div>
       <div className="mt-6 flex w-full items-center gap-5 rounded-xl bg-black/30 p-6 backdrop-blur">
-        <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30">
+        <button
+          onClick={togglePlay}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
+          aria-label={isPlaying ? "Pause" : "Play"}
+        >
           P
         </button>
         <input
           type="range"
           min={0}
+          max={duration || 0}
           step={0.1}
+          value={current}
           className="flex-1 rounded-2xl h-3"
           aria-label="Seek"
         />
