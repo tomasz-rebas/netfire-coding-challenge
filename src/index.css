@@ -11,7 +11,7 @@
     @apply border-[#827D7D] border-solid border-1 bg-[#D9D9D9] h-10 w-10 rounded-full flex justify-center items-center;
   }
   .button-rectangle {
-    @apply border-[#827D7D] border-solid border-1 bg-[#D9D9D9] py-2 px-6 rounded-lg text-center text-sm font-medium;
+    @apply border-[#827D7D] border-solid border-1 bg-[#D9D9D9] py-2 px-6 rounded-lg text-center text-sm;
   }
   .button-rectangle.selected {
     @apply bg-[#E5E5DF] font-semibold;
@@ -20,7 +20,7 @@
 
 body {
   font-family: "Exo", sans-serif;
-  font-weight: medium;
+  font-weight: 500;
   background-color: #ececec;
   margin: 0;
   letter-spacing: 0.07em;
