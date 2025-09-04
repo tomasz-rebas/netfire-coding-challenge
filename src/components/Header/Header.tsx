@@ -12,15 +12,9 @@ export const Header = () => {
       </div>
       <div className="grid grid-cols-3 max-w-7xl mx-auto h-26">
         <nav className="flex gap-4 justify-start items-center">
-          <button className="border-[#827D7D] border-solid border-1 bg-[#E5E5DF] py-2 px-6 rounded-lg text-center">
-            HOME
-          </button>
-          <button className="border-[#827D7D] border-solid border-1 bg-[#D9D9D9] py-2 px-6 rounded-lg text-center">
-            ABOUT
-          </button>
-          <button className="border-[#827D7D] border-solid border-1 bg-[#D9D9D9] py-2 px-6 rounded-lg text-center">
-            CONTACT
-          </button>
+          <button className="button-rectangle selected">HOME</button>
+          <button className="button-rectangle">ABOUT</button>
+          <button className="button-rectangle">CONTACT</button>
         </nav>
         <div className="flex justify-center items-center">
           <BrandLogo />
