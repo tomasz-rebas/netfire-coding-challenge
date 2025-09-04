@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { formatTime } from "./helpers/formatTime";
 
 interface Props {
   src: string;
@@ -95,7 +96,7 @@ export const VideoPlayer = ({ src }: Props) => {
           aria-label="Seek"
         />
         <div className="w-16 text-center tabular-nums font-bold text-[#C9C4C1]">
-          01:34
+          {formatTime(current)}
         </div>
       </div>
     </section>
