@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { formatTime } from "./helpers/formatTime";
+import { PauseIcon } from "./assets/PauseIcon";
+import { PlayIcon } from "./assets/PlayIcon";
 
 interface Props {
   src: string;
@@ -94,7 +96,7 @@ export const VideoPlayer = ({ src }: Props) => {
             className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
-            P
+            {isPlaying ? <PauseIcon /> : <PlayIcon />}
           </button>
           <input
             type="range"
