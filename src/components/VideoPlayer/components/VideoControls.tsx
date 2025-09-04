@@ -1,6 +1,7 @@
 import { PauseIcon } from "../assets/PauseIcon";
 import { PlayIcon } from "../assets/PlayIcon";
 import { formatTime } from "../helpers/formatTime";
+import { getProgressGradient } from "../helpers/getProgressGradient";
 import { useVideoPlayer } from "../hooks/useVideoPlayer";
 
 interface Props {
@@ -45,9 +46,7 @@ export const VideoControls = ({ videoRef }: Props) => {
         className="flex-1 rounded-2xl h-3"
         aria-label="Seek"
         style={{
-          background: `linear-gradient(to right, #CAE871 ${
-            (current / duration) * 100
-          }%, #252525 ${(current / duration) * 100}%)`,
+          background: getProgressGradient(current, duration),
         }}
       />
       <div className="w-16 text-center tabular-nums font-bold text-[#C9C4C1]">
