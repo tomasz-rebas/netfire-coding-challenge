@@ -1,4 +1,7 @@
-import { BrandLogo } from "../assets/BrandLogo";
+import { BrandLogo } from "../../assets/BrandLogo";
+import { CartIcon } from "./assets/CartIcon";
+import { SearchIcon } from "./assets/SearchIcon";
+import { UserIcon } from "./assets/UserIcon";
 
 export const Header = () => {
   return (
@@ -22,7 +25,17 @@ export const Header = () => {
         <div className="flex justify-center items-center">
           <BrandLogo />
         </div>
-        <div></div>
+        <div className="flex gap-4 justify-end items-center">
+          <button className="button-rounded">
+            <CartIcon />
+          </button>
+          <button className="button-rounded">
+            <UserIcon />
+          </button>
+          <button className="button-rounded">
+            <SearchIcon />
+          </button>
+        </div>
       </div>
     </header>
   );
