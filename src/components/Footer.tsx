@@ -3,7 +3,7 @@ import { BrandLogo } from "../assets/BrandLogo";
 export const Footer = () => (
   <div>
     <div className="gradient-separator" />
-    <footer className="bg-light-gray flex justify-center py-7 tracking-[0.07em]">
+    <footer className="bg-light-gray flex justify-center py-7">
       <div className="max-w-7xl flex justify-center items-center gap-14">
         <div className="flex items-center gap-6">
           <BrandLogo />
