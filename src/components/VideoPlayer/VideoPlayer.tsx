@@ -31,11 +31,11 @@ export const VideoPlayer = ({ src }: Props) => {
           loop
           playsInline
           preload="metadata"
-          className="h-[900px] w-full object-cover bg-black-40"
+          className="h-226 w-full object-cover bg-black-40"
         />
       </div>
       <div className="absolute inset-0 -z-10 bg-black/40" />
-      <div className="mx-auto flex h-[900px] max-w-7xl flex-col justify-end pb-40">
+      <div className="mx-auto flex h-226 max-w-7xl flex-col justify-end pb-40">
         <button className="border-brand-gray text-white border-solid border-1 bg-[#D9D9D919] py-3 px-6 rounded-xl text-center text-xs w-fit">
           LOREM IPSUM
         </button>
