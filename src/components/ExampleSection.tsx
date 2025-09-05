@@ -12,7 +12,7 @@ export const ExampleSection = () => (
         massa lacinia ultricies. Suspendisse lobortis vehicula eros, sed sodales
         eros mollis eget. Morbi vitae libero in nunc sodales.
       </p>
-      <div className="text-sm text-[#41423E] font-semibold underline">
+      <div className="text-sm text-[#41423E] font-semibold underline underline-offset-2">
         SEE MORE
       </div>
     </div>
