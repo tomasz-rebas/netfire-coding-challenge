@@ -20,7 +20,7 @@ export const VideoControls = ({ videoRef }: Props) => {
   } = useVideoPlayer(videoRef);
 
   return (
-    <div className="mt-6 flex w-full items-center gap-7 rounded-xl bg-black/30 px-8 py-6 backdrop-blur border border-white/20">
+    <div className="mt-6 flex w-full items-center gap-7 rounded-xl bg-black/30 px-8 py-5.5 backdrop-blur border border-white/20">
       <button
         onClick={togglePlay}
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30 border border-[#888D8E]"
