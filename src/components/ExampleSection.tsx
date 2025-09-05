@@ -1,7 +1,7 @@
 export const ExampleSection = () => (
   <div className="flex justify-center py-17">
     <div className="max-w-[1337px] text-center">
-      <button className="border border-brand-gray bg-[#D9D9D930] px-5 h-[54px] rounded-xl text-xs">
+      <button className="border border-brand-gray bg-light-gray/19 px-5 h-[54px] rounded-xl text-xs">
         EXAMPLE SECTION
       </button>
       <p className="text-[#1C1B1B] text-[32px] leading-10 my-8 tracking-tighter">
