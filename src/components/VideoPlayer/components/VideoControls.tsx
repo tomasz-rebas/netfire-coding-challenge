@@ -43,7 +43,7 @@ export const VideoControls = ({ videoRef }: Props) => {
         onTouchEnd={(e) =>
           commitScrub(parseFloat((e.target as HTMLInputElement).value))
         }
-        className="flex-1 rounded-2xl h-[10px]"
+        className="flex-1 rounded-2xl h-2.5"
         aria-label="Seek"
         style={{
           background: getProgressGradient(current, duration),

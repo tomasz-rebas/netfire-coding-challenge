@@ -4,7 +4,7 @@ export const ExampleSection = () => (
       <button className="border-brand-gray border-solid border-1 bg-[#D9D9D930] px-5 h-[54px] rounded-xl text-xs">
         EXAMPLE SECTION
       </button>
-      <p className="text-[#1C1B1B] text-[32px] leading-[40px] my-8 tracking-tighter">
+      <p className="text-[#1C1B1B] text-[32px] leading-10 my-8 tracking-tighter">
         Lorem{" "}
         <span className="text-gradient font-semibold">
           ipsum dolor sit amet consectetur adipiscing elit etiam molestie ex vel
