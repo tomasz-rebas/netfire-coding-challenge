@@ -15,4 +15,6 @@ NetFire coding challenge bootstraped with Vite.
 4. Put it in the `public` folder.
 5. Run the app with `npm run dev`.
 
-NOTE: The asset name should stay as `9206132-uhd_3840_2160_25fps.mp4`.
+The app show now be running locally at http://localhost:5173/.
+
+NOTE: Keep the file name exactly as downloaded: `9206132-uhd_3840_2160_25fps.mp4`.
