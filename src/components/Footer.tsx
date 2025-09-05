@@ -4,7 +4,7 @@ export const Footer = () => (
   <div>
     <div className="gradient-separator" />
     <footer className="bg-light-gray flex justify-center py-7">
-      <div className="max-w-7xl flex justify-center items-center gap-14">
+      <div className="max-w-[1337px] flex justify-center items-center gap-14">
         <div className="flex items-center gap-6">
           <BrandLogo />
           <h2 className="text-2xl font-semibold text-nowrap text-brand-gray">

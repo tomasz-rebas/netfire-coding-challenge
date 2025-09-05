@@ -22,8 +22,8 @@ export const VideoPlayer = ({ src }: Props) => {
         />
       </div>
       <div className="absolute inset-0 -z-10 bg-black/40" />
-      <div className="mx-auto flex h-226 max-w-7xl flex-col justify-end pb-40">
-        <button className="border-brand-gray text-white border-solid border-1 bg-[#D9D9D919] py-3 px-6 rounded-xl text-center text-xs w-fit">
+      <div className="mx-auto flex h-226 max-w-[1337px] flex-col justify-end pb-40">
+        <button className="border-brand-gray text-white border-solid border-1 bg-[#D9D9D919] h-11 px-5 rounded-xl text-center text-xs w-fit">
           LOREM IPSUM
         </button>
         <div className="max-w-4xl my-10 text-[45px] leading-[57px]">
