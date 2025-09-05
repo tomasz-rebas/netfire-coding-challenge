@@ -19,6 +19,7 @@ export const VideoPlayer = ({ src }: Props) => {
           playsInline
           preload="metadata"
           className="h-227 w-full object-cover bg-black-40"
+          poster="/fallback.webp"
         />
       </div>
       <div className="absolute inset-0 -z-10 bg-black/40" />
