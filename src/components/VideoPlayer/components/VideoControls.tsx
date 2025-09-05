@@ -49,7 +49,7 @@ export const VideoControls = ({ videoRef }: Props) => {
           background: getProgressGradient(current, duration),
         }}
       />
-      <div className="w-16 text-center font-bold text-[#C9C4C1] slashed-zero">
+      <div className="w-16 text-center text-base font-bold text-[#C9C4C1] slashed-zero">
         {formatTime(current)}
       </div>
     </div>
