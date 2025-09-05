@@ -18,7 +18,7 @@ export const VideoPlayer = ({ src }: Props) => {
           loop
           playsInline
           preload="metadata"
-          className="h-226 w-full object-cover bg-black-40"
+          className="h-227 w-full object-cover bg-black-40"
         />
       </div>
       <div className="absolute inset-0 -z-10 bg-black/40" />
