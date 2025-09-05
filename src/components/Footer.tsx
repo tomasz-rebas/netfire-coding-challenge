@@ -11,7 +11,7 @@ export const Footer = () => (
             Brand Name
           </h2>
         </div>
-        <p className="text-[#5F5959] text-[11px] leading-none font-[inter] font-regular">
+        <p className="text-[#5F5959] text-[11px] leading-none font-[inter] font-normal">
           © 2024 <span className="font-bold">Brand Name</span> All rights
           reserved. Unauthorized use or copying of this brand is strictly
           prohibited. No part of this website may be reproduced, distributed, or
