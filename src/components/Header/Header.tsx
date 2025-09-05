@@ -20,13 +20,13 @@ export const Header = () => (
         <BrandLogo />
       </div>
       <div className="flex gap-4 justify-end items-center">
-        <button className="button-rounded">
+        <button className="button-rounded" aria-label="Cart">
           <CartIcon />
         </button>
-        <button className="button-rounded">
+        <button className="button-rounded" aria-label="User">
           <UserIcon />
         </button>
-        <button className="button-rounded">
+        <button className="button-rounded" aria-label="Search">
           <SearchIcon />
         </button>
       </div>
