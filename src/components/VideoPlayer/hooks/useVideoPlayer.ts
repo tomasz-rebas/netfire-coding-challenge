@@ -1,4 +1,4 @@
-import { useEffect, useState, type RefObject } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 
 export const useVideoPlayer = (
   videoRef: RefObject<HTMLVideoElement | null>
@@ -6,14 +6,21 @@ export const useVideoPlayer = (
   const [isPlaying, setIsPlaying] = useState(true);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [isScrubbing, setIsScrubbing] = useState(false);
+
+  const scrubbingRef = useRef(false);
+  const setIsScrubbing = (val: boolean) => {
+    scrubbingRef.current = val;
+  };
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+
     const onLoaded = () => setDuration(v.duration || 0);
     const onTime = () => {
-      if (!isScrubbing) setCurrent(v.currentTime || 0);
+      if (!scrubbingRef.current) {
+        setCurrent(v.currentTime || 0);
+      }
     };
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
@@ -38,7 +45,7 @@ export const useVideoPlayer = (
       v.removeEventListener("play", onPlay);
       v.removeEventListener("pause", onPause);
     };
-  }, [isScrubbing]);
+  }, []);
 
   const togglePlay = async () => {
     const v = videoRef.current;
