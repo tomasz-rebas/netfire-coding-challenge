@@ -26,8 +26,8 @@ export const VideoPlayer = ({ src }: Props) => {
         <button className="border-brand-gray text-white border-solid border-1 bg-[#D9D9D919] h-11 px-5 rounded-xl text-center text-xs w-fit">
           LOREM IPSUM
         </button>
-        <div className="max-w-4xl my-10 text-[45px] leading-[57px]">
-          <h1 className="text-gradient font-semibold tracking-tighter mb-2">
+        <div className="max-w-3xl my-10 text-[45px] leading-[57px] tracking-tighter">
+          <h1 className="text-gradient font-semibold mb-2">
             Lorem Ipsum Dolor Sit amet
           </h1>
           <h2 className="text-lighter-gray font-semibold">
