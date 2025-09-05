@@ -23,7 +23,7 @@ export const VideoControls = ({ videoRef }: Props) => {
     <div className="mt-6 flex w-full items-center gap-7 rounded-xl bg-black/30 px-8 py-6 backdrop-blur">
       <button
         onClick={togglePlay}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30 border border-[#888D8E]"
         aria-label={isPlaying ? "Pause" : "Play"}
       >
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
