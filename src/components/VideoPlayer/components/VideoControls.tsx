@@ -23,7 +23,7 @@ export const VideoControls = ({ videoRef }: Props) => {
     <div className="mt-6 flex w-full items-center gap-5 rounded-xl bg-black/30 p-6 backdrop-blur">
       <button
         onClick={togglePlay}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#101215] text-white transition hover:bg-white/30"
         aria-label={isPlaying ? "Pause" : "Play"}
       >
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
@@ -43,7 +43,7 @@ export const VideoControls = ({ videoRef }: Props) => {
         onTouchEnd={(e) =>
           commitScrub(parseFloat((e.target as HTMLInputElement).value))
         }
-        className="flex-1 rounded-2xl h-3"
+        className="flex-1 rounded-2xl h-[10px]"
         aria-label="Seek"
         style={{
           background: getProgressGradient(current, duration),
