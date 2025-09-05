@@ -1,4 +1,4 @@
-NetFire coding challenge bootstraped with Vite.
+NetFire coding challenge bootstrapped with Vite.
 
 #### Tech stack
 
